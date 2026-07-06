@@ -1,6 +1,8 @@
 # risos — Universal RSS/Atom Feed Generator
 
-System that transforms any website into RSS/Atom feeds using YAML configuration files. Each YAML describes a site (URL, CSS/XPath selectors, per-field transform pipeline). A CLI generates the feeds and a GitHub Actions workflow runs periodically, publishing to GitHub Pages.
+Create RSS feeds for any website. Configure using YAML files.
+
+Contains a GitHub Actions workflow that generate the feeds periodically and publish them to GitHub Pages.
 
 ## Quick Start — Create Your Own Feeds
 
