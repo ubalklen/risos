@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 def fetch_page(source: SourceConfig) -> str:
     logger.info("Fetching %s", source.url)
-    with httpx.Client(follow_redirects=True, timeout=30.0, trust_env=False) as client:
+    with httpx.Client(follow_redirects=True, timeout=source.timeout, trust_env=False) as client:
         resp = client.get(source.url, headers=source.headers)
         resp.raise_for_status()
     logger.info("Fetched %s — %d bytes", source.url, len(resp.text))

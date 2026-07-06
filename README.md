@@ -57,6 +57,7 @@ feed:
 
 source:
   url: "https://example.com"  # URL to scrape (required)
+  timeout: 30.0               # HTTP timeout in seconds (default: 30.0)
   headers:                    # Optional HTTP headers
     User-Agent: "risos/1.0"
 

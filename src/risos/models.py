@@ -15,6 +15,7 @@ class FeedMeta(BaseModel):
 class SourceConfig(BaseModel):
     url: str
     headers: dict[str, str] = {}
+    timeout: float = 30.0
 
 
 class Transform(BaseModel):

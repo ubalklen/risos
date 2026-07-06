@@ -18,6 +18,14 @@ def test_fetch_page_success(httpx_mock):
     assert req.headers["X-Test"] == "1"
 
 
+def test_fetch_page_custom_timeout(httpx_mock):
+    httpx_mock.add_response(url="https://example.com", text="<html>ok</html>")
+    from risos.models import SourceConfig
+
+    result = fetch_page(SourceConfig(url="https://example.com", timeout=5.0))
+    assert "ok" in result
+
+
 def test_fetch_page_error(httpx_mock):
     httpx_mock.add_response(url="https://example.com", status_code=500)
     from risos.models import SourceConfig
